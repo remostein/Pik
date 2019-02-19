@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>PIKAPONIM - A social game</title>
+
+</head>
+
+<body class="gradient">
+    <div class="header-bg">
+        <div class="image-bg left">
+        </div>
+        <div class="image-bg right img-flip">
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <div navbar-wrapper>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">PIKAPONIM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="game-tab" data-toggle="collapse" data-target=".navbar-collapse.show"
+                            href="#">GAME<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="settings-tab" data-toggle="collapse" data-target=".navbar-collapse.show"
+                            href="#">SETTINGS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="rules-tab" data-toggle="collapse" data-target=".navbar-collapse.show"
+                            href="#">RULES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="restart-tab" data-toggle="collapse" data-target=".navbar-collapse.show"
+                            href="#">RESTART</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="game-container" id="page1">
+        <div class="container">
+            <div class="set-players">
+                <h5 class="title">PLAYERS</h5>
+                <div class="players-list">
+                    <div class="new-player" id="new_player-0">
+                        <input type="text" placeholder="Player's name" class="player-name" id="player-0">
+                        <span class="btn-delete btn-delete-player" id="btn_delete_player-0">
+                            <i class="far fa-times-circle"></i>
+                        </span>
+                    </div>
+                    <div class="new-player" id="new_player-1">
+                        <input type="text" placeholder="Player's name" class="player-name" id="player-1">
+                        <span class="btn-delete btn-delete-player" id="btn_delete_player-1">
+                            <i class="far fa-times-circle"></i>
+                        </span>
+                    </div>
+                    <div class="new-player" id="new_player-2">
+                        <input type="text" placeholder="Player's name" class="player-name" id="player-2">
+                        <span class="btn-delete btn-delete-player" id="btn_delete_player-2">
+                            <i class="far fa-times-circle"></i>
+                        </span>
+                    </div>
+                    <div class="new-player" id="new_player-3">
+                        <input type="text" placeholder="Player's name" class="player-name" id="player-3">
+                        <span class="btn-delete btn-delete-player" id="btn_delete_player-3">
+                            <i class="far fa-times-circle"></i>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="add-player">
+                    <button type="button" class="btn btn-outline-success btn-add-player">
+                        <i class="far fa-plus-square"></i>
+                    </button>
+                    ADD A PLAYER
+
+                </div>
+            </div>
+            <div class="btn-next-wrapper">
+                <button type="button" class="btn btn-outline-success disabled" id="btn-next1">NEXT</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="game-container" id="page2">
+        <div class="container">
+            <div class="row players-names-display">
+
+                <!-- Players Names Display example
+                <div class="name-left col-sm">
+                    <h5 class="title t-disabled">Player 1</h5>
+                </div>
+                <div class="name-center col-sm">
+                    <h5 class="title">Player 2</h5>
+                </div>
+                <div class="name-right col-sm">
+                    <h5 class="title t-disabled">Player 3</h5>
+                </div>
+                -->
+
+            </div>
+            <div class="name-to-guess">
+                <input type="text" placeholder="Name to guess" id="textbox-add-guess">
+            </div>
+            <div class="btn-add-guess-wrapper">
+                <button type="button" class="btn btn-outline-success disabled" id="btn-add-guess">ADD NAME</button>
+            </div>
+
+            <div class="row">
+                <div class="guess-list col-sm padding-top">
+
+                    <!-- Guess list example --
+                    <div class="guess-item item" id="guess-1">
+                        <div class="guess-title">Robin Hood</div>
+                        <span class="btn-delete btn-delete-guess">
+                            <i class="far fa-times-circle"></i>
+                        </span>
+                    </div>
+                    <div class="guess-item item" id="guess-2">
+                        <div class="guess-title">Peter Pan</div>
+                        <span class="btn-delete btn-delete-guess">
+                            <i class="far fa-times-circle"></i>
+                        </span>
+                    </div>
+                -->
+
+                </div>
+                <div class="guess-counter col-sm padding-top">
+                    <div class="label label-counter">
+                        <p id="id-counter">0</p>
+                    </div>
+                </div>
+                <div class="next-player col-sm padding-top">
+                    <div class="btn-next-wrapper">
+                        <button type="button" class="btn btn-outline-success" id="btn-next-player">NEXT PLAYER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="restart-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-style">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Restart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" id="modal-btn-restart-yes">Yes</button>
+                    <button type="button" class="btn btn-success" id="modal-btn-restart-no">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container" id="page3">
+        <div class="container">
+            <div class="row players-names-display" id="teams-names-display">
+
+                <!-- players names display example
+                <div class="name-left col-sm">
+                    <h5 class="title t-disabled"></h5>
+                </div>
+                <div class="col-sm">
+                    <h5 class="title" id="label-teamsName">Team 1</h5>
+                </div>
+                <div class="name-right col-sm">
+                    <h5 class="title t-disabled">Team 2</h5>
+                </div>
+            -->
+
+            </div>
+        </div>
+        <div class="set-name-and-color">
+            <input type="text" placeholder="Team's name" class="teams-name" id="textbox-teamsName">
+
+            <input class="jscolor {width:101, padding:0, shadow:false,
+                borderWidth:0, backgroundColor:'transparent', insetColor:'#000'}"
+                id="teamsColor" type="button" value="Color">
+            </input>
+        </div>
+        <div class="teams-players" id="teams-players">
+        </div>
+        <br>
+        <div class="btn-next-wrapper">
+            <button type="button" class="btn btn-outline-success disabled" id="btn-next3">NEXT TEAM</button>
+        </div>
+    </div>
+    <div class="game-container" id="page4">
+        <div class="container">
+            <div class="row players-names-display" id="inGame-playersDisplay">
+                <div class="name-left col-sm">
+                    <h5 class="title t-disabled">Player 1</h5>
+                </div>
+                <div class="col-sm">
+                    <h5 class="title">Player 2</h5>
+                </div>
+                <div class="name-right col-sm">
+                    <h5 class="title t-disabled">Player 3</h5>
+                </div>
+            </div>
+            <div class="game-start row">
+                <div class="time-start col-sm padding-top">
+                    <div class="timer-score">
+                        <div class="guess-counter-small">
+                            <div class="title player-name-score">
+                                PLAYER SCORE
+                            </div>
+                            <div class="label label-counter">
+                                <p class="player-score" id="player-score">2</p>
+                            </div>
+                        </div>
+                        <div class="label label-timer timer-game">
+                            <p id="timer-inGame">1:00</p>
+                        </div>
+                        <div class="guess-counter-small">
+                            <div class="title">
+                                TEAM SCORE
+                            </div>
+                            <div class="label label-counter">
+                                <p class="team-score" id="team-score">7</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="btns-wrapper">
+                        <div class="btn-start-wrapper" id="btn-start">
+                            <button type="button" class="btn btn-outline-success">START</button>
+                        </div>
+                        <div class="btns-play-wrapper">
+                            <div class="btn-skip-wrapper" id="btn-skip">
+                                <button type="button" class="btn btn-outline-danger">SKIP</button>
+                            </div>
+                            <div class="btn-pause-wrapper" id="btn-pause">
+                                <button type="button" class="btn btn-outline-warning" id="btn-pause-text">PAUSE</button>
+                            </div>
+                            <div class="btn-gotit-wrapper" id="btn-gotit">
+                                <button type="button" class="btn btn-outline-success">GOT IT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="name-picture col-sm padding-top" id="name-picture">
+                    <div class="countdownLabel" id="countdownLabel">
+
+                    </div>
+                    <div class="guess-wrapper" id="guess-wrapper_id">
+                        <div class="name-to-guess" id="inGame-nameToGuess">
+                            PETER PAN
+                        </div>
+                        <div class="image-wrapper">
+                            <div class="guess-image">
+                                <img src="" alt="" id="guessPhoto0">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="image-wrapper row">
+                            <div class="guess-image image-buttom col">
+                                <img src="" alt="" id="guessPhoto1">
+                            </div>
+
+                            <div class="guess-image image-buttom col">
+                                <img src="" alt="" id="guessPhoto2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="score col-sm padding-top">
+                    <div class="guess-counter counter-lg">
+                        <div class="title player-name-score">
+                            CURRENT SCORE
+                        </div>
+                        <div class="label label-counter">
+                            <p class="player-score" id="player-score1">2</p>
+                        </div>
+                    </div>
+                    <div class="guess-counter counter-lg">
+                        <div class="title">
+                            TEAM SCORE
+                        </div>
+                        <div class="label label-counter">
+                            <p class="team-score" id="team-score1">7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content modal-style">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Round Rules</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="game-container" id="settingsPage">
+        <div class="container">
+            <div class="middle row">
+                <div class="set-timer col-6 col-sm-3 wrapper">
+                    <h5 class="title" data-toggle="tooltip" data-placement="top" title="Set the time for each player's round">TIMER</h5>
+                    <div class="label label-timer">
+                        <p id="id-timer">1:00</p>
+                    </div>
+                    <div class="btn-group-vertical btns-timer">
+                        <button type="button" class="btn btn-outline-success btn-ctrl" id="btn-timer-up"><i class="fas fa-angle-double-up"></i></button>
+                        <button type="button" class="btn btn-outline-success btn-ctrl" id="btn-timer-down"><i class="fas fa-angle-double-down"></i></button>
+                    </div>
+                </div>
+                <div class="set-teams col-6 col-sm-3 wrapper">
+                    <h5 class="title" data-toggle="tooltip" data-placement="top" title="Set the number of teams">TEAMS</h5>
+                    <div class="label label-teams">
+                        <p id="id-teams">2</p>
+                    </div>
+                    <div class="btn-group-vertical btns-teams">
+                        <button type="button" class="btn btn-outline-success btn-ctrl" id="btn-teams-up"><i class="fas fa-angle-double-up"></i></button>
+                        <button type="button" class="btn btn-outline-success btn-ctrl" id="btn-teams-down"><i class="fas fa-angle-double-down"></i></button>
+                    </div>
+
+                </div>
+                <div class="set-min-inputs col-6 col-sm-3 wrapper">
+                    <h5 class="title" data-toggle="tooltip" data-placement="top" title="Set minimum inputs per player">
+                        INPUTS</h5>
+                    <div class="label label-min-inputs">
+                        <p id="min-inputs">4</p>
+                    </div>
+                    <div class="btn-group-vertical btns-min-inputs">
+                        <button type="button" class="btn btn-outline-success btn-ctrl" id="btn-min-inputs-up"><i class="fas fa-angle-double-up"></i></button>
+                        <button type="button" class="btn btn-outline-success btn-ctrl" id="btn-min-inputs-down"><i
+                                class="fas fa-angle-double-down"></i></button>
+                    </div>
+                </div>
+                <div class="set-numOfPhotos col-6 col-sm-3 wrapper">
+                    <h5 class="title" data-toggle="tooltip" data-placement="top" title="Set number of photos shown when player sees a name">
+                        PHOTOS</h5>
+                    <div class="label label-numOfPhotos">
+                        <p id="numOfPhotos">1</p>
+                    </div>
+                    <div class="btn-group-vertical btns-numOfPhotos">
+                        <button type="button" class="btn btn-outline-success btn-ctrl" id="btn-numOfPhotos-up"><i class="fas fa-angle-double-up"></i></button>
+                        <button type="button" class="btn btn-outline-success btn-ctrl" id="btn-numOfPhotos-down"><i
+                                class="fas fa-angle-double-down"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="inGame-options col-sm">
+                    <div id="random-teams-toggle">
+                        <label class="switch">
+                            <input type="checkbox" name="random-teams" id="random-teams-btn" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="text-settings">
+                            RANDOM TEAMS
+                        </div>
+                        <br>
+                    </div>
+                    <div id="enable-game-pause-toggle">
+                        <label class="switch">
+                            <input type="checkbox" name="enable-pause" id="enable-pause-btn">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="text-settings">
+                            ENABLE GAME PAUSE
+                        </div>
+                        <br>
+                    </div>
+                    <div id="enable-skip-guess-toggle">
+                        <label class="switch">
+                            <input type="checkbox" name="enable-skip" id="enable-skip-btn">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="text-settings" id="skip-settings-text">
+                            ENABLE SKIP GUESS
+                        </div>
+                    </div>
+                    <div id="enable-countdown-toggle">
+                        <label class="switch">
+                            <input type="checkbox" name="enable-countdown" id="enable-countdown-btn" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="text-settings" id="countdown-settings-text">
+                            ENABLE COUNTDOWN
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-next-wrapper col-sm btn-back">
+                    <button type="button" class="btn btn-outline-success" id="btn-back">BACK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="game-container rules" id="rulesPage">
+
+        <div class="container" id="rules-text">
+            <h2 id="rules-title">RULES</h2>
+            <div class="underline">
+            </div>
+            <p>
+                Pikaponim, or notes (in hebrew: "Pitkiot"), is a social game in which a certain number of teams must
+                reveal to each other the names of famous figures written on notes, first by verbal cues, then by
+                pantomime, and then by one word only. After each round, the participants write down the number of notes
+                each team succeed in identifying.
+            </p>
+            <h4>Basic Rules</h4>
+
+            <ul class="basicRules clearfix">
+                <li>Minimum of 2 teams per a game.</li>
+                <li>Each team must have a minimum of 2 players.</li>
+                <li>If there are more than 4 players, the players will be divided as evenly as possible between the
+                    teams. If there are 6 players or more, it's possible to increment the number of teams</li>
+                <li>Each team memeber has to write down a minimum amount of names to guees (that amount can be
+                    changed in Settings). 4 is the recomended minimum amount.</li>
+                <li>The recomended time for each player's turn is 60 seconds (the time can be changed in Settings
+                    between 0:10 seconds to 5:00 minutes).</li>
+                <li>The default amount of photos per name is 1. It can be changed in Settings between 0 (no photos)
+                    to 3.</li>
+                <li>When a player starts his turn, and gets a name to pass to his teammates, he cannot stop the
+                    timer, and he cannot pass to the next name. However, it's possible to change that in Settings
+                    (enable pause / skip button)</li>
+                <li>A round ends when all names have been guessed, then, all the names are reshuffled, and the next
+                    round starts</li>
+                <li>When a player's turn ends, that player cannot say the last name he saw (and didn't succeed to
+                    pass to his teammates), because that will help the next team figure it out really fast.</li>
+            </ul>
+            <br>
+
+            <h4>Game progress</h4>
+            <p>
+                At the beginning of the game, each participant writes down the names of famous characters (usually four
+                characters in four notes) from all aspects of life, both real and fictional (usually only names
+                familiar to all participants). The participants then divide into competing teams.
+                Each round starts with one team playing, each team has one minute to play, untill the turn is over and
+                the next team gets to play.
+                In each turn, the team that is playing has to pick a team member that takes the note, see what it says,
+                and try to reveal the name to his team-mates, if succeed, the note is counted as a point, and the
+                player can take another note (in the remaining minute).
+            </p>
+            <h4>Round 1</h4>
+            <p>
+                In the first round, one participant of the playing team try revealing the names on the notes to his
+                fellow team memebers using verbal cues. There is no restriction on the verbal cues, apart from using
+                the name itself, or using the a similar name/ rhyme (for example, if a note says Puff Daddy, you cannot
+                say P Dee dee)
+            </p>
+            <h4>Round 2</h4>
+            <p>
+                In the second round, one participant of the playing team try revealing the names on the notes through
+                pantomime. In this round of the game, the participant is prohibited from uttering a word, and he must
+                pass the name of the character (which is already known to all participants after being exposed in the
+                previous round) by means of movements only. The participant is allowed to walk around the room and make
+                any movement that comes to his head that may, in his opinion, hint at the identity of the character, as
+                long as he does not say anything.
+            </p>
+            <h4>Round 3</h4>
+            <p>
+                In the third round, one participant of the playing team try revealing the names on the notes with only
+                one word. Once the word has been spoken, it can not be replaced and remains the only way for the
+                participant to transfer the identity of the character until the allotted time. The participant is
+                allowed to say the word in any way he wants: while singing, imitating the character and more.
+            </p>
+            <h4>Game summary</h4>
+            <p>
+                After the third round is over, all teams count all the notes they identified in the first, second and
+                third round. The team with the most notes, wins!
+            </p>
+            <br>
+            <div class="btn-next-wrapper btn-back" style="margin-bottom: 10px">
+                <button type="button" class="btn btn-outline-success" id="btn-back-rules">BACK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container about" id="aboutPage">
+        <h2 id="rules-title">ABOUT</h2>
+        <div class="underline"></div>
+
+        <div class="container" id="about-text" style="padding-top: 10px">
+            <p>This game was coded in Javascript, html, css, as a side project while developing using Bootstrap,
+                jQuery, webpack and much more.
+                Have fun!
+                <br>
+                Omer Stein
+            </p>
+            <br>
+            <div class="btn-next-wrapper btn-back" style="margin-bottom: 10px">
+                <button type="button" class="btn btn-outline-success" id="btn-back-about">BACK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-container results" id="resultsPage">
+
+        <div class="container" id="results-container">
+            <div class="results-header">
+                <h3>SCOREBOARD</h3>
+                <div class="underline"></div>
+            </div>
+            <div class="results-content">
+                <div class="results-winning-team">
+                    <div class="results-team-title">
+                        THE WINNING TEAM IS
+                    </div>
+                    <div class="results-team-title winning-team-name" id="winning-team-name">
+                        POP
+                    </div>
+                    <div class="results-score">
+                        SCORE
+                    </div>
+                    <div class="results-score" id="results-win-team-score">
+
+                    </div>
+                    <div class="container">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Score</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody id="winning-team-table">
+
+                                <!-- EXAMPLE OF WINNING TEAM
+                                <tr>
+                                    <td>Omer</td>
+                                    <td>7</td>
+                                    <td><i class="fas fa-info-circle" data-toggle="collapse" data-target=".results-player_1"></i></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="hiddenRow">
+                                        <div class="collapse results-player_1 hiddenRow">
+                                            <table class="table">
+                                                <thead>
+                                                </thead>
+                                                <tbody class="tbody-details">
+                                                    <tr>
+                                                        <td>Stage 1</td>
+                                                        <td>0:56</td>
+                                                        <td>Jennifer Lopez</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Stage 1</td>
+                                                        <td>0:41</td>
+                                                        <td>אבי ביטר</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Hen</td>
+                                    <td>6</td>
+                                    <td><i class="fas fa-info-circle" data-toggle="collapse" data-target=".results-player_2"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Bob</td>
+                                    <td>4</td>
+                                    <td><i class="fas fa-info-circle" data-toggle="collapse" data-target=".results-player_3"></i></td>
+                                </tr>
+                                -->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <div class="results-rest-teams" id="results-rest-teams">
+
+                    <!--    EXAMPLE OF REST OF RESULTS
+                        <div class="results-team-title">
+                            2.
+                        </div>
+                        <div class="results-team-title" id="team-name_2">
+                            POP
+                        </div>
+                        <div class="results-score">
+                            SCORE
+                        </div>
+                        <div class="results-score" id="results-team-score_2">
+                            4554
+                        </div>
+                        <div class="results-show-more" id="btn-results-more_2">
+                                <i class="fas fa-arrow-alt-circle-down"></i>
+                        </div>                       
+                        <div class="container res-team-container" style="display: none" id="res-team-more_2">
+                            <table class="table table-dark table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Score</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="team-table_2">                  
+                                    <tr>
+                                        <td>Omer</td>
+                                        <td>7</td>
+                                        <td><i class="fas fa-info-circle" data-toggle="collapse" data-target=".results-player_1"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="hiddenRow">
+                                            <div class="collapse results-player_1 hiddenRow">
+                                                <table class="table">
+                                                    <thead>
+                                                    </thead>
+                                                    <tbody class="tbody-details">
+                                                        <tr>
+                                                            <td>Stage 1</td>
+                                                            <td>0:56</td>
+                                                            <td>Jennifer Lopez</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Stage 1</td>
+                                                            <td>0:41</td>
+                                                            <td>אבי ביטר</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+    
+                                            </div>
+                                        </td>
+                                    </tr>   
+                                    <tr>
+                                        <td>Hen</td>
+                                        <td>6</td>
+                                        <td><i class="fas fa-info-circle" data-toggle="collapse" data-target=".results-player_2"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bob</td>
+                                        <td>4</td>
+                                        <td><i class="fas fa-info-circle" data-toggle="collapse" data-target=".results-player_3"></i></td>
+                                    </tr>                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    -->
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Made by Omer Stein</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jscolor-picker@2.0.4/jscolor.min.js" integrity="sha256-CJWfUCeP3jLdUMVNUll6yQx37gh9AKmXTRxvRf7jzro="
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

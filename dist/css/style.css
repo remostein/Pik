@@ -1,0 +1,687 @@
+.clearfix {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  background-color: #272e38;
+  letter-spacing: 0.1em;
+}
+
+.gradient {
+  background-image:
+    linear-gradient(
+      to right,
+      #272e3822,
+      #272e3822,
+      #20775d22,
+      #272e3822,
+      #272e3822
+    );
+    
+}
+
+
+.game-container {
+  position: relative;
+  margin-top: 15px;
+  min-height: 350px;
+  display: none;
+}
+
+@media only screen and (max-width: 660px) {
+  .game-container {
+    margin-top: 10px;
+  }
+
+  .gradient {
+    background-image:
+      linear-gradient(
+        to right,
+        #272e3822,
+        #20775d22,
+        #272e3822
+      );
+      
+  }
+}
+
+
+/***********************
+ *  Header Background
+ ***********************/
+
+.img-flip {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.image-bg {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url("../img/corner.png");
+  height: 35%;
+  width: 35%;
+  background-size: contain;
+}
+
+.right {
+  top: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.left {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/***********************
+ *      Navbar
+ ***********************/
+
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: 500;
+  margin-right: 20%;
+}
+
+.navbar {
+  margin: 1% 20% 0 20%;
+ 
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 660px) {
+  .navbar-brand {
+    font-size: 30px;
+    font-weight: 500;
+    margin-right: 0;
+  }
+
+  .navbar {
+    margin: 1% 5% 0 5%;
+    ;
+  }
+
+}
+
+nav ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 30px;
+}
+
+nav li a:hover {
+  background-color: white;
+  color: #272e38 !important;
+  text-decoration: none;
+
+}
+
+nav li a:active {
+  font-weight: 700 !important;
+}
+
+/***********************
+ * Page1
+ ***********************/
+
+.title {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.new-player {
+  padding: 0;
+  margin: 0;
+}
+
+input[type="text"] {
+  font-size: 16px;
+  border-color: rgb(255, 132, 132);
+  background-color: #272e38;
+  color: white;
+  height: 35px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  input[type="text"] {
+    margin: 5px;
+  }
+
+}
+
+input:focus {
+  outline: none;
+}
+
+.add-player {
+  padding: 2% 0;
+}
+
+.btn-delete-player {
+  padding-left: 0;
+  line-height: 0;
+}
+
+.wrapper {
+  text-align: center;
+  font-size: 0;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+.wrapper>div {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+#btn-next {
+  font-size: 20px;
+  padding: 7px 12px;
+}
+
+#btn-back {
+  float:right;
+}
+
+.btn-next-wrapper {
+  margin: 10px;
+}
+
+
+/***********************
+ *       page2
+ ***********************/
+
+.players-names-display {
+  width: 80%;
+  margin-left: 10%;
+
+}
+
+@keyframes animation-left {        
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33%);
+    opacity: 0.4;
+    font-size: large;
+  }      
+}
+
+.run-animation-left {
+  position: relative;
+  animation: animation-left 1s ease;
+}
+
+@media only screen and (max-width: 580px) {
+
+  .name-left,
+  .name-right {
+    display: none;
+  }
+}
+
+.t-disabled {
+  color: rgba(153, 153, 153, 0.5);
+  font-size: medium;
+}
+
+.btn-delete,
+.guess-title {
+  display: inline;
+}
+
+.item {
+  margin: auto;
+  padding: 13px;
+  width: 70%;
+}
+
+@media only screen and (max-width: 580px) {
+  .item {
+    margin-left: 15%;
+  }
+}
+
+.item:first-child {
+  border-top: 1px solid #e7e7e76b;
+}
+
+.item:nth-child(even) {
+  background-color: #f6f6f617;
+}
+
+.btn-delete {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  vertical-align: middle;
+  display: none;
+  color: rgba(255, 132, 132, 0.5);
+}
+
+.btn-delete-guess {
+  padding-left: 10px;
+  line-height: 1;
+  float: right;
+}
+
+.btn-delete:focus {
+  outline: none;
+}
+
+.btn-delete:active {
+  transform: translateY(2px);
+}
+
+.item:hover .btn-delete {
+  display: block;
+  color: rgba(255, 132, 132, 0.5);
+
+}
+
+.guess-title {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+
+.item:hover .guess-title {
+  transform: translateX(20px);
+}
+
+.padding-top {
+  padding-top: 20px;
+}
+
+#id-counter {
+  border-color: rgb(255, 132, 132);
+  background-color: rgba(255, 132, 132, 0.5);
+}
+
+/***********************
+ *       SettingsPage
+ ***********************/
+ .text-settings {
+  position: absolute;
+  font-size: 14px;
+  display: inline;
+  padding: 10px;
+}
+
+#skip-settings-text {
+  margin-left: 4px;
+}
+
+.inGame-options {
+  position: relative;
+  padding: 10px;
+  text-align: left;
+  float:left;
+  vertical-align: center;
+}
+
+.label p {
+  display: inline-block;
+  /*
+  width: 40px;
+  height: 75px;
+  */
+  width: auto;
+  height: auto;
+  border-style: dotted;
+  border-color: #28a745;
+  border-radius: 6px;
+  background-color: #28a74631;
+  padding: 10px;
+  font-size: 30px;
+  line-height: 50px;
+  
+}
+
+.btn-ctrl {
+  display: block;
+}
+
+/** Toggler / Slider**/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #185c288f;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #28a745;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #28a74631;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+  border: solid 1px #28a745;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+
+}
+
+/***********************
+ *       Page3
+ ***********************/
+
+#teamsColor {
+margin-left: 10px;
+color: transparent !important;
+width: 50px !important;
+height: 30px !important;
+}
+
+
+#colorWrapper {
+  display: inline-block;
+  color: white;
+  height: 32px;
+  width: 32px;
+  position: fixed;
+  font-size: 30px;
+  margin-top: 3px;
+  border: solid 2px black;
+}
+
+.teams-players {
+  margin: auto;
+  display: block;
+  position: relative;
+  width: 60%;
+}
+
+/***********************
+ *       Page4
+ ***********************/
+
+.modal-style {
+  background-color: #185c28b4;
+  border: #5f6369 2px solid;
+}
+
+.modal {
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+#btn-pause,
+#btn-gotit,
+#btn-skip {
+  /* display: inline-block; */
+  display: none;
+}
+
+.btns-wrapper {
+  position: relative;
+  min-height: 50px;
+
+}
+
+.btn-start-wrapper,
+.btns-play-wrapper {
+  position: absolute;
+  width: 100%;
+
+}
+
+.image-wrapper img {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.image-buttom {
+  float: left;
+  width: 45%;
+  padding: 5px;
+}
+
+.image-buttom img{
+max-width: 150px;
+max-height: 150px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .image-wrapper img {
+    max-height: 150px;
+    max-width: 150px;
+  }
+
+  .image-buttom img{
+    max-width: 80px;
+    max-height: 80px;
+    }
+
+    #guessPhoto1 { float: right}
+    #guessPhoto2 { float: left}
+
+}
+
+#countdownLabel {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  font-size: 60px;
+  margin: auto;
+}
+
+.name-to-guess {
+  font-size: 25px;
+}
+
+.guess-counter {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.guess-counter-small {
+  display: none;
+  margin: 0;
+}
+
+@media only screen and (max-width: 575px) {
+  .guess-counter-small {
+    display: inline-block;
+  }
+
+  .timer-game {
+    display: inline-block;
+    transform: translateX(-10px);
+  }
+
+  .counter-lg {
+    display: none;
+  }
+}
+
+ /***********************
+ *       Results
+ ***********************/
+.result-winning-team {
+  width: 80%;
+  margin: auto;
+}
+
+ .results-team-title, 
+ .winning-team-name,
+ .results-show-more {
+  display:inline;
+}
+
+ .winning-team-name {
+   position: relative;
+   padding: 3px;
+   background-color: rgba(0, 0, 0, 0.3);
+   border: #28a74599 dotted 2px;
+   color: yellow;
+   font-size: 20px;
+   margin: auto;
+ }
+
+ .results-score{
+  padding: 5px;
+  display: inline;
+ }
+
+ .results-content { 
+   padding-top: 5px;
+ }
+
+.hiddenRow {
+  padding: 0 !important;
+}
+
+.tbody-details {
+  background-color: rgba(0, 0, 0, 0.884);
+}
+
+.results-content i {
+font-size: 2vw;
+}
+
+.results-content i:hover {
+    color: greenyellow;
+}
+
+.results-content i:active {
+  transform: translateY(2px);
+}
+
+.results-content {
+  transition: all 0.3s;
+}
+
+
+/***********************
+ *       Rules
+ ***********************/
+
+.rules {
+  letter-spacing: 2px;
+  word-spacing: 2px;
+}
+
+ .rules p, .rules li{
+   text-align: justify;
+ }
+
+ .rules h4 {
+   padding: 3px 0;
+ }
+
+ #rules-title {
+   margin-bottom: 0;
+ }
+
+ .underline {
+   text-align: center;
+   height: 3px;
+   width: 50%;
+   background-color: white;
+   border-radius: 200%;
+   margin: 0 auto 10px auto;
+
+ }
+
+ .basicRules li {
+  text-align: left;
+  float: left !important;
+  padding: 3px 0;
+
+}
+
+ /***********************
+ *       About
+ ***********************/
